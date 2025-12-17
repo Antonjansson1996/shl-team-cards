@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SHL laganalys</title>
 </head>
-<body style="font-family:Arial, sans-serif; margin:24px;">
+<body style="font-family:Arial, sans-serif; margin:0; background:#f6d9bf;">
 
-  <h1 style="margin-bottom:8px;">SHL laganalys per månad</h1>
-  <div style="margin-bottom:14px; color:#444;">Välj lag för att visa lagkortet.</div>
+  <div style="max-width:1200px; margin:24px auto; padding:0 16px;">
+    
+    <div style="margin-bottom:14px; color:#444;">Välj lag för att visa lagkortet.</div>
 
-  <div style="margin-bottom:12px;">
-    <label style="font-weight:600;">Lag:</label>
-    <select id="teamSelect" style="margin-left:10px; padding:8px 10px; font-size:16px;">
-      <option value="brynas-if">Brynäs IF</option>
+    <div style="margin-bottom:12px; display:flex; align-items:center; gap:10px;">
+      <label style="font-weight:600; color:#444;">Lag:</label>
+      <select id="teamSelect" style="padding:8px 10px; font-size:16px;">
+        <option value="brynas-if">Brynäs IF</option>
 <option value="djurgardens-if">Djurgårdens IF</option>
 <option value="frolunda-hc">Frölunda HC</option>
 <option value="farjestad-bk">Färjestad BK</option>
@@ -27,24 +28,29 @@
 <option value="timra-ik">Timrå IK</option>
 <option value="vaxjo-lakers">Växjö Lakers</option>
 <option value="orebro-hockey">Örebro Hockey</option>
-    </select>
-  </div>
+      </select>
+    </div>
 
-  <div style="max-width:1200px;">
-    <img id="teamImg" src="" alt="Lagkort" style="width:100%; height:auto; border-radius:8px;">
+
+    <div style="width:100%;">
+      <img id="teamImg" src="" alt="Lagkort"
+           style="width:100%; height:auto; border-radius:8px; display:block;">
+    </div>
   </div>
 
   <script>
-    const select = document.getElementById("teamSelect");
-    const img = document.getElementById("teamImg");
+  const select = document.getElementById("teamSelect");
+  const img = document.getElementById("teamImg");
 
-    function updateImage() {
-      img.src = select.value + ".png";
-    }
+  function updateImage() {
+    img.src = select.value + ".png";
+  }
 
-    select.addEventListener("change", updateImage);
-    updateImage();
-  </script>
+  select.addEventListener("change", updateImage);
+  updateImage();
+</script>
+
 
 </body>
+
 </html>
